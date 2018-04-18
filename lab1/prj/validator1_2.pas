@@ -1,0 +1,109 @@
+unit Validator1_2;
+
+{$mode objfpc}{$H+}
+
+ interface
+  function Valid1(var x,y,z: string):byte;
+  function Valid2(z,x,y: real):byte;
+
+
+ implementation
+ function Valid1(var x,y,z: string):byte;
+  var i,d,t:byte;
+    g,p:set of char ;
+  begin
+   g:=['0','1','2','3','4','5','6','7','8','9'];
+   p:=[',','-'];
+    valid1:=1;
+     d:=1;
+     t:=1;
+   if (x='')or(y='')or(z='') then
+   begin
+    valid1:=0 ;
+     exit;
+      end;
+   while (pos('.',x)<>0) do
+       x[pos('.',x)]:=',';
+   while (pos('.',y)<>0) do
+       y[pos('.',y)]:=',';
+   while (pos('.',z)<>0) do
+       z[pos('.',z)]:=',';
+       for i:=1 to length(x) do
+    begin
+      if not(x[i] in g)and not(x[i] in p) then
+       begin
+      valid1:=0;
+      exit;
+      end;
+    if ((x[i] in p)and (((x[i]=',')and (d=0)) or ((x[i]='-')and(t=0))) or ((i<>1) and (x[i]='-')))then
+      begin
+        valid1:=0;
+        exit;
+        end
+      else
+      begin
+      if (x[i]=',') then
+       begin
+       d:=0;
+       end;
+       if(x[i]='-') then
+           t:=0;
+                 end;
+        end;
+       d:=1;
+       t:=1;
+   for i:=1 to length(y) do
+   begin
+     if not(y[i] in g)and not(y[i] in p) then
+      begin
+     valid1:=0;
+     exit;
+     end;
+    if ((y[i] in p)and (((y[i]=',')and (d=0)) or ((y[i]='-')and(t=0))) or ((i<>1) and (y[i]='-')))then
+      begin
+        valid1:=0;
+        exit;
+        end
+      else
+      begin
+      if (y[i]=',')  then
+       begin
+       d:=0;
+       end;
+       if(y[i]='-') then
+           t:=0;
+        end;
+        end;
+          d:=1;
+          t:=1;
+         for i:=1 to length(z) do
+    begin
+      if not(z[i] in g)and not(z[i] in p) then
+       begin
+      valid1:=0;
+      exit;
+      end;
+     if ((((z[i]=',')and(d=0))or((z[i]='-')and(t=0)))  or ((i<>1) and (z[i]='-')))then
+      begin
+        valid1:=0;
+        exit;
+        end
+      else
+      begin
+      if (z[i]=',') then
+       begin
+       d:=0;
+       end;
+       if(z[i]='-') then
+           t:=0;
+                 end;
+        end;
+       end;
+ function Valid2(z,x,y: real):byte;
+ begin
+      valid2:=1;
+      if ((z*z -(x+y))=0) then
+         valid2:=0 ;
+ end;
+   end.
+
