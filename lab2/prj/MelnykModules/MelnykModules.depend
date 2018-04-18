@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1524079668 source:e:\project\Новая папка\123\main.cpp
+	<cstring>
+	<cmath>
+	<clocale>
+	<cstdlib>
+
