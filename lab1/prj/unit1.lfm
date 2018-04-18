@@ -1,0 +1,63 @@
+object Form1: TForm1
+  Left = 248
+  Height = 360
+  Top = 127
+  Width = 536
+  Caption = 'Form1'
+  ClientHeight = 360
+  ClientWidth = 536
+  LCLVersion = '1.8.2.0'
+  object Label1: TLabel
+    Left = 35
+    Height = 135
+    Top = 11
+    Width = 493
+    Caption = 'Програма виконує такі функції'#13#10' за натиснення кнопки "Щаслива літера" виводить випадкову літеру української абетки '#13#10'від Є до Ф включно; '#13#10' за натисненням кнопки "Дата" - поточну дату;'#13#10' за натисненням кнопки "Перевірити" - повідомлення, чи є введене користувачем слово '#13#10'у статті 23 Конституції України '#13#10'Кожна людина має право на вільний розвиток своєї особистості, якщо '#13#10'при цьому не порушуються права і свободи інших людей, та має обов''язки перед'#13#10' суспільством, в якому забезпечується вільний і всебічний розвиток її особистості'
+    ParentColor = False
+    OnClick = Label1Click
+  end
+  object Label2: TLabel
+    Left = 35
+    Height = 15
+    Top = 152
+    Width = 404
+    Caption = 'Розробник: Мельник С.О.            ЦНТУ          м. Кропивницький         2018р.'
+    ParentColor = False
+    OnClick = Label2Click
+  end
+  object Edit1: TEdit
+    Left = 35
+    Height = 23
+    Top = 185
+    Width = 383
+    OnChange = Edit1Change
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 35
+    Height = 35
+    Top = 239
+    Width = 101
+    Caption = 'Щаслива літера'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object Button2: TButton
+    Left = 176
+    Height = 35
+    Top = 239
+    Width = 102
+    Caption = 'Дата'
+    OnClick = Button2Click
+    TabOrder = 2
+  end
+  object Button3: TButton
+    Left = 320
+    Height = 35
+    Top = 239
+    Width = 102
+    Caption = 'Перевірити'
+    OnClick = Button3Click
+    TabOrder = 3
+  end
+end
