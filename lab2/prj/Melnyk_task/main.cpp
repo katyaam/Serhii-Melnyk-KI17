@@ -10,28 +10,26 @@
 
 using namespace std;
 
-void Logic(){
-    int a=0,b=0;
-    bool s;
-    cout << "Введiть перший параметр: ";
-    cin>>a;
-    cout << "Введiть другий параметр: ";
-    cin>>b;
-    s=a+1<b;
-    cout << "Логічний результат: "<<s<<endl;
+int Logic(char a, char b)
+
+{
+    bool f=a+1<b;
+    if (f==0)
+        return 0;
+    else
+        return 1;
 }
 void Name()
 {
-    system("chcp 1251");
-    system("cls");
     cout<<" -------------------"<<endl;
     cout<<"|Melnyk Sergey CNTU |"<<endl;
-    cout<<"|Мельник Сергій ЦНТУ|"<<endl;
-    cout<<" ---------©---------"<<endl;
+    cout<<"|Melnyk Sergey CNTU|"<<endl;
+    cout<<" -------(c)---------"<<endl;
 }
 int main()
 {
     Name();
+    setlocale (LC_CTYPE,"ukr");
 	int sw;
 	while(sw!=0)
     {
@@ -41,7 +39,15 @@ int main()
         {
             case 1:
             {
-                Logic();
+                string d,f;
+                char a,b;
+                cout << "Введiть перший параметр: ";
+                cin>>d;
+                a=d[0];
+                cout << "Введiть другий параметр: ";
+                cin>>f;
+                b=f[0];
+                cout << "Логiчний результат: "<< Logic(a,b)<<endl;
                 break;
             }
             case 2:
